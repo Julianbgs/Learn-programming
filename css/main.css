@@ -8,6 +8,7 @@ html,body{
     height: 100%;
     align-items: center;
     justify-content: center;
+    flex-direction: column;
     /*background: dodgerblue;*/
     /*box-shadow: 0 -400px 100px -120px forestgreen inset;*/
     /*animation: background 3s infinite alternate;*/
@@ -19,3 +20,31 @@ html,body{
         /*box-shadow: 0 -400px 100px -100px yellowgreen inset;*/
     /*}*/
 /*}*/
+
+.input {
+    position: relative;
+    float: left;
+    width: 140px;
+}
+
+.space {
+    position: relative;
+    float: left;
+    width: 100%;
+   display: contents;
+}
+
+.main__field {
+    position: relative;
+    float: left;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-left: 98px;
+}
+
+.restrict {
+    position: relative;
+    float: left;
+    width: 300px;
+}
