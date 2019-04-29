@@ -8,21 +8,31 @@
 <body>
 <section class="main main--bg">
     <div class="main__wrap">
-    <div class="main__box">
-        <input type="text" class="input" id="inputBorder" placeholder="Введите диапазон">
-    </div>
-    <div class="main__field">
-        <div class="restrict">
-            <input type="text" class="input" id="inputNum">
-            <input type="text" class="input" id="inputDescr">
+        <div class="main__box">
+            <input type="text" class="input" id="inputBorder" placeholder="Введите диапазон">
         </div>
-        <button type="button"  class="btn" id="addInput">+</button>
-        <button type="button" class="btn" id="remInput">-</button>
-        <button type="button" class="btn" id="result">Result</button>
+        <div class="main__field">
+            <p class="main__title">Оценка экспетров</p>
+            <p class="main__title">Комментарий</p>
+            <div class="restrict">
+                <input type="text" class="input" id="inputNum">
+                <input type="text" class="input" id="inputDescr">
+            </div>
+            <button type="button" class="btn" id="addInput">+</button>
+            <button type="button" class="btn" id="remInput">-</button>
+            <button type="button" class="btn" id="result">Result</button>
+        </div>
+        <div class="space" id="fieldInput"></div>
+        <div class="result" id="mainRes"></div>
+        <div class="middleSum" id="middleSum">
+
+        </div>
+
+        <div class="median" id="mainMedian">
+
+        </div>
     </div>
-    <div class="space" id="fieldInput"></div>
-    <div class="result" id="mainRes"></div>
-    </div>
+
 </section>
 </body>
 <script src="js/logic.js"></script>

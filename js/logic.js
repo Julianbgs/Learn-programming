@@ -6,6 +6,8 @@ let space = document.querySelector('#fieldInput');
 let result = document.querySelector('#result');
 let border = document.getElementById('inputBorder');
 let mainRes = document.querySelector('#mainRes');
+let mainSum = document.querySelector('#middleSum');
+let mainMedian = document.querySelector('#mainMedian');
 
 addBtn.addEventListener('click', function () {
     space.innerHTML += `<div class="restrict"> <input type="text" class="input" id="inputNum"> <input type="text" class="input" id="inputDescr"></div>`
@@ -30,14 +32,14 @@ result.addEventListener('click', function () {
     });
     console.log(inputsParsed);
 
-
+    let median = 0;
     let medianIndex = Math.floor(inputsParsed.length / 2);
     // console.log('num'+":"+medianIndex)
     if (inputsParsed.length % 2 === 0) {
-        let median = (Number(inputsParsed[medianIndex]) + Number(inputsParsed[medianIndex - 1]))/2;
+         median = (Number(inputsParsed[medianIndex]) + Number(inputsParsed[medianIndex - 1]))/2;
         console.log('Median' + " " + median);
     } else {
-        let median = (Number(inputsParsed[medianIndex]));
+        median = (Number(inputsParsed[medianIndex]));
         console.log('Median' + " " + median);
     }
 
@@ -67,6 +69,15 @@ result.addEventListener('click', function () {
     console.log('low' + ' ' + lowBorder);
     console.log('high' + ' ' + highBorder);
 
+    let middleSum = 0;
+    let sum = 0;
+    for(let i=0;i<inputsParsed.length;i++) {
+        sum += Number(inputsParsed[i].value);
+        middleSum = sum/i;
+    }
+    console.log('middleSum' + ' ' + middleSum)
+    console.log('Sum'+' '+ sum);
+
     let range = Number(highBorder) - Number(lowBorder) ;
     console.log('Range' + ' ' + range);
 
@@ -75,21 +86,12 @@ result.addEventListener('click', function () {
 
      if(range === borderVal || range <= borderVal){
          mainRes.innerHTML = `<p class="resText">Результаты верны, второй тур не нужен</p>`
+         mainSum.innerHTML = ` <p class="main__descr">Среднее значение</p>` + middleSum;
+         mainMedian.innerHTML = `  <p class="main__descr">Медианна</p>` + median;
          console.log(borderVal);
      }else{
          mainRes.innerHTML = `<p class="resText">Результаты ошибочны, второй тур нужен</p>`
      }
-
-
-
-    // let sum = 0;
-    // for(let i=0;i<inputs.length;i++) {
-    //     console.log(inputs[i].value);
-    //     sum += Number(inputs[i].value);
-    // }
-    // console.log(sum);
-
-
 
 });
 
