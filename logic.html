@@ -6,17 +6,23 @@
     <link rel="stylesheet" href="css/main.css">
 </head>
 <body>
-<section class="main">
+<section class="main main--bg">
+    <div class="main__wrap">
+    <div class="main__box">
+        <input type="text" class="input" id="inputBorder" placeholder="Введите диапазон">
+    </div>
     <div class="main__field">
         <div class="restrict">
             <input type="text" class="input" id="inputNum">
             <input type="text" class="input" id="inputDescr">
         </div>
-        <button type="button" id="addInput">+</button>
-        <button type="button" id="remInput">-</button>
-        <button type="button" id="result">Result</button>
+        <button type="button"  class="btn" id="addInput">+</button>
+        <button type="button" class="btn" id="remInput">-</button>
+        <button type="button" class="btn" id="result">Result</button>
     </div>
     <div class="space" id="fieldInput"></div>
+    <div class="result" id="mainRes"></div>
+    </div>
 </section>
 </body>
 <script src="js/logic.js"></script>

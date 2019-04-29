@@ -4,9 +4,11 @@ let addBtn = document.querySelector('#addInput');
 let remBtn = document.querySelector('#remInput');
 let space = document.querySelector('#fieldInput');
 let result = document.querySelector('#result');
+let border = document.getElementById('inputBorder');
+let mainRes = document.querySelector('#mainRes');
 
 addBtn.addEventListener('click', function () {
-    space.innerHTML += `<div class="restrict"> <input type="text" class="input" id="inputNum"> <input type="text" class="input" id="inputDescr"> </div>`
+    space.innerHTML += `<div class="restrict"> <input type="text" class="input" id="inputNum"> <input type="text" class="input" id="inputDescr"></div>`
 });
 
 remBtn.addEventListener('click', function () {
@@ -30,7 +32,7 @@ result.addEventListener('click', function () {
 
 
     let medianIndex = Math.floor(inputsParsed.length / 2);
-    console.log('num'+":"+medianIndex)
+    // console.log('num'+":"+medianIndex)
     if (inputsParsed.length % 2 === 0) {
         let median = (Number(inputsParsed[medianIndex]) + Number(inputsParsed[medianIndex - 1]))/2;
         console.log('Median' + " " + median);
@@ -39,14 +41,55 @@ result.addEventListener('click', function () {
         console.log('Median' + " " + median);
     }
 
+    let max = 0;
+    let min = 0;
 
+    for(let j = 0 ; j <inputsParsed.length  ;j++ ){
+        inputsParsed[j] < inputsParsed[j+1];
+        max = inputsParsed[j+1];
+        if(inputsParsed[j+1] === undefined){
+            max =  inputsParsed[j];
+        }
+        // console.log('input'+' '+max);
+        }
+    console.log('max' + ' ' + max);
 
-    let sum = 0;
-    for(let i=0;i<inputs.length;i++) {
-        console.log(inputs[i].value);
-        sum += Number(inputs[i].value);
+    for(let i = 1;i < inputsParsed.length ;i++){
+        min = inputsParsed[0];
     }
-    console.log(sum);
+    console.log('min'+' '+ min);
+
+    let kvartil = (Number(max) - Number(min))/4;
+    console.log('Kvartil'+' '+ kvartil);
+
+    let lowBorder = Number(min) + Number(kvartil);
+    let highBorder = Number(max) + Number(kvartil);
+    console.log('low' + ' ' + lowBorder);
+    console.log('high' + ' ' + highBorder);
+
+    let range = Number(highBorder) - Number(lowBorder) ;
+    console.log('Range' + ' ' + range);
+
+    let borderVal = border.value;
+    console.log('Border'+ ' ' + borderVal);
+
+     if(range === borderVal || range <= borderVal){
+         mainRes.innerHTML = `<p class="resText">Результаты верны, второй тур не нужен</p>`
+         console.log(borderVal);
+     }else{
+         mainRes.innerHTML = `<p class="resText">Результаты ошибочны, второй тур нужен</p>`
+     }
+
+
+
+    // let sum = 0;
+    // for(let i=0;i<inputs.length;i++) {
+    //     console.log(inputs[i].value);
+    //     sum += Number(inputs[i].value);
+    // }
+    // console.log(sum);
+
+
 
 });
 
