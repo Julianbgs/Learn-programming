@@ -9,8 +9,10 @@ let mainRes = document.querySelector('#mainRes');
 let mainSum = document.querySelector('#middleSum');
 let mainMedian = document.querySelector('#mainMedian');
 
+
+
 addBtn.addEventListener('click', function () {
-    space.innerHTML += `<div class="restrict"> <input type="text" class="input" id="inputNum"> <input type="text" class="input" id="inputDescr"></div>`
+    space.innerHTML += `<div class="restrict"> <input type="text" class="input" id="inputNum"> <input type="text" class="input" id="inputDescr"></div>`;
 });
 
 remBtn.addEventListener('click', function () {
@@ -71,11 +73,12 @@ result.addEventListener('click', function () {
 
     let middleSum = 0;
     let sum = 0;
-    for(let i=0;i<inputsParsed.length;i++) {
-        sum += Number(inputsParsed[i].value);
-        middleSum = sum/i;
+    for(let i=0;i<inputs.length;i++) {
+        sum += Number(inputs[i].value);
     }
-    console.log('middleSum' + ' ' + middleSum)
+
+    middleSum = sum/inputs.length;
+    console.log('middleSum' + ' ' + middleSum);
     console.log('Sum'+' '+ sum);
 
     let range = Number(highBorder) - Number(lowBorder) ;
@@ -85,13 +88,17 @@ result.addEventListener('click', function () {
     console.log('Border'+ ' ' + borderVal);
 
      if(range === borderVal || range <= borderVal){
-         mainRes.innerHTML = `<p class="resText">Результаты верны, второй тур не нужен</p>`
+         mainRes.innerHTML = `<p class="resText">Результаты верны, второй тур не нужен</p>`;
          mainSum.innerHTML = ` <p class="main__descr">Среднее значение</p>` + middleSum;
          mainMedian.innerHTML = `  <p class="main__descr">Медианна</p>` + median;
          console.log(borderVal);
-     }else{
-         mainRes.innerHTML = `<p class="resText">Результаты ошибочны, второй тур нужен</p>`
+     } else if (borderVal.length === 0){
+         mainRes.innerHTML = `<p class="resText">Введите диапазон</p>`;
+     } else {
+         mainRes.innerHTML = `<p class="resText">Результаты ошибочны, второй тур нужен</p>`;
      }
 
+
 });
+
 
