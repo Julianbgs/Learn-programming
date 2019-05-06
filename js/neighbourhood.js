@@ -1,4 +1,4 @@
-function Neighbourhood(matrix, pos1,pos2) {
+function Neighbourhood(matrix, pos1, pos2) {
     // let position = matrix[pos1][pos2];
     // let pos_1 = matrix[pos1-1][pos2];
     // let pos_2 = matrix[pos1-1][pos2+1];
@@ -20,52 +20,91 @@ function Neighbourhood(matrix, pos1,pos2) {
 
     let buffer = 0;
 
-    for(let i = matrix[pos1-1]; i < matrix[pos1+1]; i++) {
-        console.log('hi');
-        for(let j = matrix[pos2-1]; j < matrix[pos2+1];j++) {
-            if(matrix[i][j] === 1) {
-                buffer += matrix[i][j];
-                console.log(buffer)
+
+    for(let i = pos1 - 1; i < pos1 + 2; i++) {
+        for(let j = pos2-1; j < pos2+2;j++) {
+            // if((matrix[i][j] === 1 || i >= 0 ||  j >= 0 ||  (i === pos1 && j === pos2))) {
+            //     buffer += matrix[i][j];
+            //     console.log(buffer);
+            // }
+            if(i >= 0 && j >= 0){
+                console.log(matrix[i][j]);
             }
         }
     }
 
     console.log(buffer);
 
-    // if(matrix[pos1 - 1] !==
-    //     undefined)
-    // {
+    // if (matrix[pos1 - 1] !== undefined) {
     //     if (matrix[pos1 - 1][pos2] === 1) {
-    //         buffer = Number(pos_1);
+    //         buffer = Number(matrix[pos1 - 1][pos2]);
     //     }
     //     if (matrix[pos1 - 1][pos2 + 1] === 1) {
-    //         buffer += Number(pos_2);
+    //         buffer += Number(matrix[pos1 - 1][pos2 + 1]);
     //     }
     //     if (matrix[pos1 - 1][pos2 - 1] === 1) {
-    //         buffer += Number(pos_8);
+    //         buffer += Number(matrix[pos1 - 1][pos2 - 1]);
     //     }
     // }
-    // if (matrix[pos1][pos2+1] === 1) {
-    //     buffer += Number(pos_3);
-    // }
-    // if (matrix[pos1+1][pos2+1] === 1) {
-    //     buffer += Number(pos_4);
-    // }
-    // if (matrix[pos1+1][pos2] === 1) {
-    //     buffer += Number(pos_5);
-    // }
-    // if (matrix[pos1+1][pos2-1] === 1) {
-    //     buffer += Number(pos_6);
-    // }
-    // if (matrix[pos1][pos2-1] === 1) {
-    //     buffer += Number(pos_7);
+    //
+    // if(matrix[pos2-1] !== undefined){
+    //     if (matrix[pos1 - 1][pos2 - 1] === 1) {
+    //         buffer += Number(matrix[pos1 - 1][pos2 - 1]);
+    //     }
+    //     if (matrix[pos1 + 1][pos2 - 1] === 1) {
+    //         buffer += Number(matrix[pos1 + 1][pos2 - 1]);
+    //     }
+    //     if (matrix[pos1][pos2 - 1] === 1) {
+    //         buffer += Number(matrix[pos1][pos2 - 1]);
+    //     }
     // }
     //
-    // console.log(buffer);
+    // if(matrix[pos2+1] !== undefined) {
+    //     if (matrix[pos1][pos2 + 1] === 1) {
+    //         buffer += Number(matrix[pos1][pos2 + 1]);
+    //     }
+    //     if (matrix[pos1 + 1][pos2 + 1] === 1) {
+    //         buffer += Number(matrix[pos1 + 1][pos2 + 1]);
+    //     }
+    //     if (matrix[pos1 - 1][pos2 + 1] === 1) {
+    //         buffer += Number(matrix[pos1 - 1][pos2 + 1]);
+    //     }
+    // }
+    //
+    // if(matrix[pos1+1] !== undefined) {
+    //     if (matrix[pos1 + 1][pos2 + 1] === 1) {
+    //         buffer += Number(matrix[pos1 + 1][pos2 + 1]);
+    //     }
+    //     if (matrix[pos1 + 1][pos2] === 1) {
+    //         buffer += Number(matrix[pos1 + 1][pos2]);
+    //     }
+    //     if (matrix[pos1 + 1][pos2 - 1] === 1) {
+    //         buffer += Number(matrix[pos1 + 1][pos2 - 1]);
+    //     }
+    // }
+
+    //
+    // if (matrix[pos1][pos2 + 1] === 1) {
+    //     buffer += Number(matrix[pos1][pos2 + 1]);
+    // }
+    // if (matrix[pos1 + 1][pos2 + 1] === 1) {
+    //     buffer += Number(matrix[pos1 + 1][pos2 + 1]);
+    // }
+    // if (matrix[pos1 + 1][pos2] === 1) {
+    //     buffer += Number(matrix[pos1 + 1][pos2]);
+    // }
+    // if (matrix[pos1 + 1][pos2 - 1] === 1) {
+    //     buffer += Number(matrix[pos1 + 1][pos2 - 1]);
+    // }
+    // if (matrix[pos1][pos2 - 1] === 1) {
+    //     buffer += Number(matrix[pos1][pos2 - 1]);
+    // }
+
+    console.log(buffer);
 }
 
-Neighbourhood([ [1, 0, 1, 1, 0],
+Neighbourhood( [[1, 0, 1, 1, 0],
                 [0, 1, 1, 0, 0],
                 [0, 0, 1, 0, 1],
                 [1, 0, 0, 0, 0],
-                [0, 0, 1, 0, 0]],1,1);
+                [0, 0, 1, 0, 0]], 0, 0);
