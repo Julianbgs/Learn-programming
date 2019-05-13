@@ -61,6 +61,8 @@ openModal.addEventListener('click', function () {
 
     closeModal.addEventListener('click', function () {
        modal.style.display = 'none';
+       resultElectro.innerHTML = ' ';
+       result.innerHTML = ' ';
     });
 
     window.addEventListener('click', function (e) {
@@ -122,10 +124,10 @@ btn.addEventListener('click', function () {
     let curVal = currency.value;
 
     if ( curVal === 'rub') {
-        result.innerHTML = `<p>Общая сумма :</p>` + " " + calc + "rub.";
+        result.innerHTML = `<p>Общая сумма :</p>` + " " + calc +  ' ' + "rub.";
     }
     if( curVal === 'usd') {
-        result.innerHTML = `<p>Общая сумма :</p>` + " " + calcUsd + "usd.";
+        result.innerHTML = `<p>Общая сумма :</p>` + " " + calcUsd + ' ' + "usd.";
     }
 });
 //end calc
@@ -183,10 +185,11 @@ electroBtn.addEventListener('click', function () {
     let curElVal = currencyElectro.value;
 
     if ( curElVal === 'rub') {
-        resultElectro.innerHTML = `<p>Общая сумма :</p>` + " " + calc + "rub.";
+        resultElectro.innerHTML = `<p>Общая сумма :</p>` + " " + calc + " " + "rub.";
     }
     if( curElVal === 'usd') {
-        resultElectro.innerHTML = `<p>Общая сумма :</p>` + " " + calcUsd + "usd.";
+        resultElectro.innerHTML = `<p>Общая сумма :</p>` + " " + calcUsd + ' ' + "usd.";
     }
+
 });
 //end calc
