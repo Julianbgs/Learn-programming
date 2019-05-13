@@ -7,16 +7,98 @@
 </head>
 <body>
 <section class="main">
-    <form action="#">
-        <select id="typeCar">
-            <option value="Coupe">Coupe</option>
-            <option value="Sedan">Sedan</option>
-            <option value="Offroad">Offroad</option>
-        </select>
-        <button type="button" id="btn">Calculate</button>
-        <div class="result" id="result"></div>
-    </form>
+    <a href="#" id="openModal">Калькулятор</a>
 </section>
+<div class="modal" id="modal">
+    <div class="modal__body">
+        <div class="close" id="closeModal">x</div>
+        <div class="modal__wrap-link">
+            <a href="#easy" class="link" data-tab="easy">Легковая</a>
+            <a href="#electro" class="link" data-tab="electro">Электро</a>
+            <a href="#hybrid" class="link" data-tab="hybrid">Гибрид</a>
+        </div>
+        <div id="easy" class="tab active">
+            <form action="#">
+                <select id="place" class="select-form">
+                    <option value="usa">Америка</option>
+                    <option value="europe">Евросоюз</option>
+                    <option value="russia">Россия</option>
+                </select>
+                <select id="typeMotor" class="select-form">
+                    <option value="dizel">Дизельный</option>
+                    <option value="benz">Бензиновый</option>
+                    <option value="gaz">Газовый</option>
+                </select>
+                <select id="volume" class="select-form">
+                    <option value="1200">1200 см3</option>
+                    <option value="1999">1999 см3</option>
+                    <option value="2400">2400 см3</option>
+                    <option value="2900">2900 см3</option>
+                </select>
+                <select id="currency" class="select-form">
+                    <option value="rub">Rub</option>
+                    <option value="usd">USD</option>
+                </select>
+                <button type="button" id="btn" class="calc-btn">Calculate</button>
+                <div class="result" id="result"></div>
+            </form>
+        </div>
+        <div id="electro" class="tab">
+            <form action="#">
+                <p>two</p>
+                <select id="placeElectro" class="select-form">
+                    <option value="usa">Америка</option>
+                    <option value="europe">Евросоюз</option>
+                    <option value="russia">Россия</option>
+                </select>
+                <select id="typeMotorElectro" class="select-form">
+                    <option value="dizel">Дизельный</option>
+                    <option value="benz">Бензиновый</option>
+                    <option value="gaz">Газовый</option>
+                </select>
+                <select id="volumeElectro" class="select-form">
+                    <option value="1200">1200 см3</option>
+                    <option value="1999">1999 см3</option>
+                    <option value="2400">2400 см3</option>
+                    <option value="2900">2900 см3</option>
+                </select>
+                <select id="currencyElectro" class="select-form">
+                    <option value="rub">Rub</option>
+                    <option value="usd">USD</option>
+                </select>
+                <button type="button" id="btnElectro" class="calc-btn">Calculate</button>
+                <div class="result" id="resultElectro"></div>
+            </form>
+        </div>
+        <div id="hybrid" class="tab">
+            <form action="#">
+                <p>three</p>
+                <select id="place" class="select-form">
+                    <option value="usa">Америка</option>
+                    <option value="europe">Евросоюз</option>
+                    <option value="russia">Россия</option>
+                </select>
+                <select id="typeMotor" class="select-form">
+                    <option value="dizel">Дизельный</option>
+                    <option value="benz">Бензиновый</option>
+                    <option value="gaz">Газовый</option>
+                </select>
+                <select id="volume" class="select-form">
+                    <option value="1200">1200 см3</option>
+                    <option value="1999">1999 см3</option>
+                    <option value="2400">2400 см3</option>
+                    <option value="2900">2900 см3</option>
+                </select>
+                <select id="currency" class="select-form">
+                    <option value="rub">Rub</option>
+                    <option value="usd">USD</option>
+                </select>
+                <button type="button" id="btn" class="calc-btn">Calculate</button>
+                <div class="result" id="result"></div>
+            </form>
+        </div>
+    </div>
+</div>
 </body>
 <script src="js/calculate.js"></script>
 </html>
