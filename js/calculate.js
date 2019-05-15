@@ -193,32 +193,30 @@ electroBtn.addEventListener('click', function () {
 
 });
 //end calc
-// let data = '';
-//
-// let editRequest = new XMLHttpRequest();
-// editRequest.onreadystatechange = function() {
-//     try {
-//         if (editRequest.readyState === 4) {
-//             data = editRequest.response;
-//             console.log(data);
-//         }
-//     }
-//     catch (err) {
-//         console.log(err);
-//     }
-// }.bind(editRequest, this);
-// editRequest.responseType = 'json';
-// editRequest.open('GET', 'http://bank-ua.com/export/exchange_rate_cash.json');
-// editRequest.send();
+let data = '';
+
+let editRequest = new XMLHttpRequest();
+editRequest.onreadystatechange = function() {
+    try {
+        if (editRequest.readyState === 4) {
+            data = editRequest.response;
+            console.log(data);
+        }
+    }
+    catch (err) {
+        console.log(err);
+    }
+}.bind(editRequest, this);
+editRequest.responseType = 'json';
+editRequest.open('GET', 'https://api.privatbank.ua/#p24/exchangeArchive');
+editRequest.send();
 
 // $.ajax({
 //     url: 'http://bank-ua.com/export/exchange_rate_cash.json',
-//     type: "POST",
-//     dataType: 'application/json; charset=utf-8',
+//     type: "GET",
 //     success: function (data) {
 //         alert(data);
 //
-//             // updateListing(data[x]);
 //         }
 //     });
 
